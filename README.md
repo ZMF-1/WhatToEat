@@ -6,6 +6,10 @@
 ## 📖 简介
 WhatToEat 是一个为我的家人设计的程序，旨在帮助他们决定今天吃什么。它提供了一个简单而有效的解决方案，以解决日常饮食选择的难题。
 
+## 🚀 在线演示
+您可以直接访问以下链接体验WhatToEat服务：
+[https://wte.codete.top](https://wte.codete.top)
+
 ## 🌟 特点
 - **用户友好的界面**：直观的界面让选择变得轻松。
 - **多样化的菜单**：程序内置多种菜品选择，满足不同口味。
@@ -38,8 +42,11 @@ python app.py
 ```
 
 ## 🔧 贡献
-我们欢迎任何形式的贡献！请遵循以下步骤：
-
+我们欢迎任何形式的贡献！
+<br/>
+你也可以去我的[爱发电主页](https://afdian.com/a/imbee/)看看
+<br/>
+如果要帮我改代码，请遵循以下步骤：
 1. 克隆仓库并创建分支： `git clone https://github.com/ZMF-1/WhatToEat.git` 然后 `git checkout -b my-new-feature`
 2. 提交您的更改： `git commit -am 'Add some feature'`
 3. 推送到远程分支： `git push origin my-new-feature`
