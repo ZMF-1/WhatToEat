@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatToEat - 每日菜单</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* 防止内容水平滚动 */
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* 背景固定，不随滚动条滚动 */
+        }
+
+        .transparent-bg {
+            position: relative;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 50px auto;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+
+        .container {
+            text-align: center;
+            padding-top: 20vh; /* 根据背景图像调整 */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .menu-btn {
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: block;
+            width: 50%; /* 根据需要调整按钮宽度 */
+            max-width: 300px; /* 设置按钮最大宽度 */
+        }
+
+        .menu-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* 添加间距属性 */
+            max-width: 500px; /* 限制模态框的最大宽度 */
+            margin: 5% auto; /* 确保模态框在视口中垂直居中 */
+        }
+
+        .modal-content img {
+            max-width: 35%; /* 限制图片宽度为模态框宽度的30% */
+            height: auto; /* 保持图片宽高比 */
+            margin: 10px 0; /* 调整图片上下边距 */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px; /* 将关闭按钮放在模态框的右上角 */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media (min-width: 600px) {
+            .background {
+                background-image: url('bg1.jpg');
+            }
+        }
+
+        @media (max-width: 599px) {
+            .background {
+                background-image: url('bg2.jpg');
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>感谢您使用WhatToEat！如果您觉得我们的服务对您有帮助，请考虑赞助我们以支持我们的工作。</p>
+            <a href="https://s2.loli.net/2024/08/14/9uFRdLxYm6QlcJz.jpg" target="_blank">
+                <img src="https://s2.loli.net/2024/08/14/9uFRdLxYm6QlcJz.jpg" alt="赞助图片">
+            </a>
+            <button id="supportBtn">赞助我们</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="transparent-bg">
+            <h1>WhatToEat</h1>
+            <button id="dailyMenuBtn" class="menu-btn" >显示今日菜单</button>
+            <button id="weeklyMenuBtn" class="menu-btn">显示本周菜单</button>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.querySelector('.modal');
+        var span = document.querySelector('.close');
+        var supportBtn = document.getElementById('supportBtn');
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onload = function() {
+            modal.style.display = "block";
+        }
+
+        supportBtn.onclick = function(event) {
+            event.preventDefault();
+            // alert('感谢您的支持! 这里是赞助链接的占位逻辑。');
+            window.location.href = 'https://afdian.com/a/imbee/';
+        }
+    </script>
+
+</body>
+</html>
