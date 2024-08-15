@@ -134,12 +134,19 @@
                 background-image: url('bg2.jpg');
             }
         }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <div class="background"></div>
 
+    <!--
     <div class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -150,21 +157,21 @@
             <button id="supportBtn">赞助我们</button>
         </div>
     </div>
+    -->
 
     <div class="container">
         <div class="transparent-bg">
             <h1>WhatToEat</h1>
-            <button id="dailyMenuBtn" class="menu-btn" >显示今日菜单</button>
-            <button id="weeklyMenuBtn" class="menu-btn">显示本周菜单</button>
+            {{ food_lst | safe }}
+            <button id="back" class="menu-btn" >返回首页</button>
         </div>
     </div>
 
     <script>
-        var modal = document.querySelector('.modal');
+        var back = document.getElementById('back')
+        /* var modal = document.querySelector('.modal');
         var span = document.querySelector('.close');
         var supportBtn = document.getElementById('supportBtn');
-        var today = document.getElementById('dailyMenuBtn')
-        var week = document.getElementById('weeklyMenuBtn')
 
         span.onclick = function() {
             modal.style.display = "none";
@@ -178,14 +185,9 @@
             event.preventDefault();
             // alert('感谢您的支持! 这里是赞助链接的占位逻辑。');
             window.location.href = 'https://afdian.com/a/imbee/';
-        }
-
-        today.onclick = function () {
-            window.location.href = 'daily';
-        }
-
-        week.onclick = function () {
-            window.location.href = 'weekly';
+        } */
+        back.onclick = function () {
+            window.location.href = '/'
         }
     </script>
 
